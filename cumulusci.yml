@@ -1,0 +1,24 @@
+minimum_cumulusci_version: '3.19.1'
+project:
+    name: Salesforce-II-SubDirectory
+    package:
+        name: Salesforce-II-SubDirectory
+        api_version: '49.0'
+    git:
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Salesforce-II-SubDirectory/tests
+            options:
+                outputdir: robot/Salesforce-II-SubDirectory/results
+
+    robot_testdoc:
+        options:
+            path: robot/Salesforce-II-SubDirectory/tests
+            output: robot/Salesforce-II-SubDirectory/doc/Salesforce-II-SubDirectory_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
