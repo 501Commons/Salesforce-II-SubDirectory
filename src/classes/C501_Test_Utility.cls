@@ -39,7 +39,7 @@ public with sharing class C501_Test_Utility {
                 BillingState = 'FL',
                 BillingPostalCode = '33309',
                 BillingCountry = 'USA',
-                C501_Imagine_WA_County__c='Adams',
+                c501_cm__C501_Imagine_WA_County__c='Adams',
                 RecordTypeID = rtID);
             acctLIST.add(acct);
         } // END for (integer nLoop = 1; nLoop <= nCount; nLoop++)
@@ -81,7 +81,7 @@ public with sharing class C501_Test_Utility {
             boolean ii_Licensed;
             String ii_Substitute_Pool_Status;
             String ii_Initial_Training_Requirement;
-            String ii_Languages;
+            String Languages_Spoken;
             String ii_Cpr_Cert_Status=null;
             String ii_FamLink_Id='1234'+string.valueOf(nLoop);
             String ii_Stars_Id='567'+string.valueOf(nLoop);
@@ -102,7 +102,7 @@ public with sharing class C501_Test_Utility {
                         mphone = '5005550006';
                         ii_Unit_Status='In-Unit';
                         ii_Licensed=true;
-                        ii_Languages='English';
+                        Languages_Spoken='English';
                         ii_Substitute_Pool_Status='Eligible';
                         ii_Cpr_Cert_Status='test';
                     }
@@ -112,7 +112,7 @@ public with sharing class C501_Test_Utility {
                         mphone = '5005550006';
                         ii_Unit_Status='In-Unit';
                         ii_Licensed=true;
-                        ii_Languages='English';
+                        Languages_Spoken='English';
                         ii_Substitute_Pool_Status='Approved';
                         ii_Cpr_Cert_Status='test';
                     }
@@ -122,7 +122,7 @@ public with sharing class C501_Test_Utility {
                         Imagine_Mobile_Phone = '5005550006';
                         ii_Unit_Status='Out-of-Unit';
                         ii_Licensed=false;
-                        ii_Languages='Spanish';
+                        Languages_Spoken='Spanish';
                         ii_Substitute_Pool_Status='Pending';
                     }
                 }
@@ -141,21 +141,21 @@ public with sharing class C501_Test_Utility {
                 //MailingCity = acct.BillingCity,
                 //MailingPostalCode = acct.BillingPostalCode,
                 //MailingCountry = acct.BillingCountry,
-                C501_Imagine_WA_County__c=C501_Imagine_WA_County,
+                c501_cm__C501_Imagine_WA_County__c=C501_Imagine_WA_County,
                 MobilePhone=mphone,
-                Imagine_Mobile_Phone__c=Imagine_Mobile_Phone,
-                C501_SMS_Opt_Out__c=C501_SMS_Opt_Out,
+                c501_cm__Imagine_Mobile_Phone__c=Imagine_Mobile_Phone,
+                c501_cm__C501_SMS_Opt_Out__c=C501_SMS_Opt_Out,
                 HasOptedOutOfEmail=emailOptout,
-                ii_Unit_Status__c=ii_Unit_Status,
-                ii_Substitute_Pool_Status__c=ii_Substitute_Pool_Status,
-                ii_Languages__c=ii_Languages,
-                ii_Cpr_Cert_Status__c=ii_Cpr_Cert_Status,
-                ii_FamLink_Id__c=ii_FamLink_Id,
-                ii_County__c = ii_County,
+                c501_cm__ii_Unit_Status__c=ii_Unit_Status,
+                c501_cm__ii_Substitute_Pool_Status__c=ii_Substitute_Pool_Status,
+                Languages_Spoken__c=Languages_Spoken,
+                c501_cm__ii_Cpr_Cert_Status__c=ii_Cpr_Cert_Status,
+                c501_cm__ii_FamLink_Id__c=ii_FamLink_Id,
+                c501_cm__ii_County__c = ii_County,
                 MailingCity='Here',
-                ii_Sub_Pool_Status__c=ii_Sub_Pool_Status,
-                ii_Stars_Id__c=ii_Stars_Id,
-                ii_SSPS_Number__c=ii_SSPS_Number,
+                c501_cm__ii_Sub_Pool_Status__c=ii_Sub_Pool_Status,
+                c501_cm__ii_Stars_Id__c=ii_Stars_Id,
+                c501_cm__ii_SSPS_Number__c=ii_SSPS_Number,
                 
 
                 RecordTypeID = rtID);
@@ -202,13 +202,13 @@ public with sharing class C501_Test_Utility {
             camp = new Campaign(
                 //AccountId = acct.ID,
                 Name = sName + string.valueOf(nLoop),
-                custom_Start_DateTime__c = custom_Start_DateTime,
-                C501_Outreach_WA_Counties__c = C501_Outreach_WA_Counties,
-                Language__c = Language,
-                Training_Name__c = sName + string.valueOf(nLoop) ,   
-                Class_Type__c = Class_Type,            
+                c501_cm__custom_Start_DateTime__c = custom_Start_DateTime,
+                c501_cm__C501_Outreach_WA_Counties__c = C501_Outreach_WA_Counties,
+                c501_cm__Language__c = Language,
+                c501_cm__Training_Name__c = sName + string.valueOf(nLoop) ,   
+                c501_cm__Class_Type__c = Class_Type,            
                 Billable_Hours__c = 1,
-                City__c='Test'//,
+                c501_cm__City__c='Test'//,
 
                 //RecordTypeID = rtID
                 );

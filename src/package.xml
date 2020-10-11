@@ -6,5 +6,24 @@
         <members>C501_Test_Utility</members>
         <name>ApexClass</name>
     </types>
+    <types>
+        <members>Campaign.Billable_Hours__c</members>
+        <members>Imagine_Settings__c.Communication_Preference_URL__c</members>
+        <members>Imagine_Settings__c.Email_Opt_In_Reply__c</members>
+        <members>Imagine_Settings__c.Email_Opt_Out_Reply__c</members>
+        <members>Imagine_Settings__c.Email_SMS_Unsub_Text__c</members>
+        <members>Imagine_Settings__c.Email_Template_Prefix__c</members>
+        <members>Imagine_Settings__c.Outreach_Report__c</members>
+        <members>Imagine_Settings__c.Remote_REST_Allowed_IP_s__c</members>
+        <members>Imagine_Settings__c.Reply_Email__c</members>
+        <members>Imagine_Settings__c.SMS_Opt_In_Reply__c</members>
+        <members>Imagine_Settings__c.SMS_Opt_Out_Reply__c</members>
+        <members>Imagine_Settings__c.SMS_Template_Prefix__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Imagine_Settings__c</members>
+        <name>CustomObject</name>
+    </types>
     <version>45.0</version>
 </Package>

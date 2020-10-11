@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Billable_Hours__c</fullName>
+        <description>Actual number of billable hours that may be different from the class duration (e.g., time for breaks, external time for homework)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Actual number of billable hours that may be different from the class duration (e.g., time for breaks, external time for homework)</inlineHelpText>
+        <label>Billable Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>
