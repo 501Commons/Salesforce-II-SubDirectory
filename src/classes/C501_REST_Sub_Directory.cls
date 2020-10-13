@@ -22,7 +22,7 @@ global class C501_REST_Sub_Directory {
                 subList = [SELECT ID,FirstName,LastName,c501_cm__ii_Stars_Id__c,Languages_Spoken__c,MailingLatitude,MailingLongitude,
                 c501_cm__ii_County__c,c501_cm__C501_Imagine_WA_County__c,c501_cm__C501_Record_Type_Name__c,c501_cm__ii_Sub_Pool_Status__c,
                 MailingCity,c501_cm__ii_Primary_Language__c
-                FROM Contact WHERE c501_cm__ii_Sub_Pool_Status__c='Approved' AND c501_cm__C501_Record_Type_Name__c='Contact'];
+                FROM Contact WHERE Sub_Pool_Status_Rollup__c='Approved' AND c501_cm__C501_Record_Type_Name__c='Contact'];
                     /* for(Contact sl:sublist){
                         Contact newcon = new Contact();
                         newcon.FirstName=sl.FirstName;
@@ -70,16 +70,24 @@ global class C501_REST_Sub_Directory {
                     if(County2==null){
                         County2='County';
                     }
+                    String StarsID = sl.c501_cm__ii_Stars_Id__c;
+                    if(StarsID==null){
+                        StarsID='StarsID';
+                    }
+                    String MailingCity = sl.MailingCity;
+                    if(MailingCity==null){
+                        MailingCity='MailingCity';
+                    }
 
                     
                     gen.writeStartObject();
                     gen.writeStringField('firstname', sl.FirstName);
                     gen.writeStringField('lastname', sl.LastName);
                     //gen.writeStringField('starsID', f.c501_cm__ii_Stars_Id__c);
-                    gen.writeStringField('starsID', sl.c501_cm__ii_Stars_Id__c);
+                    gen.writeStringField('starsID', StarsID);
                     gen.writeStringField('Language', Language);
                     gen.writeStringField('Language2', Language2);
-                    gen.writeStringField('City', sl.MailingCity);
+                    gen.writeStringField('City', MailingCity);
                     gen.writeStringField('City2', City2);
                     gen.writeStringField('County', County);
                     gen.writeStringField('County2', County2);
@@ -117,18 +125,38 @@ global class C501_REST_Sub_Directory {
                     if(County2==null){
                         County2='County';
                     }
+                    String FName = f.FirstName;
+                    if(FName==null){
+                        FName='FirstName';
+                    }
+                    String LName = f.LastName;
+                    if(LName==null){
+                        LName='LastName';
+                    }
+                    String FamLinkID = f.c501_cm__ii_FamLink_Id__c;
+                    if(FamLinkID==null){
+                        FamLinkID='FamLinkID';
+                    }
+                    String MailCity = f.MailingCity;
+                    if(MailCity==null){
+                        MailCity='City1';
+                    }
+                    String County = f.c501_cm__ii_County__c;
+                    if(County==null){
+                        County='County1';
+                    }
 
                     
                     gen.writeStartObject();
-                    gen.writeStringField('firstname', f.FirstName);
-                    gen.writeStringField('lastname', f.LastName);
+                    gen.writeStringField('firstname', FName);
+                    gen.writeStringField('lastname', LName);
                     //gen.writeStringField('starsID', f.c501_cm__ii_Stars_Id__c);
-                    gen.writeStringField('famLinkID', f.c501_cm__ii_FamLink_Id__c);
+                    gen.writeStringField('famLinkID', FamLinkID);
                     gen.writeStringField('Language', Language);
                     gen.writeStringField('Language2', Language2);
-                    gen.writeStringField('City', f.MailingCity);
+                    gen.writeStringField('City', MailCity);
                     gen.writeStringField('City2', City2);
-                    gen.writeStringField('County', f.c501_cm__ii_County__c);
+                    gen.writeStringField('County', County);
                     gen.writeStringField('County2', County2);
                     gen.writeEndObject();
 
