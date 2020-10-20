@@ -1,3 +1,17 @@
+/*************************************
+
+1) Login to WorkBench REST Explorer
+https://workbench.developerforce.com/restExplorer.php
+
+2) Select GET then Paste /services/v1/sub-directory/sub.json/
+
+External URL via Sites: https://imagineinstitutecloud.secure.force.com/services/apexrest/v1/sub-directory/sub.json
+
+NOTE: I'm not sure if this is the recommended way to access a REST Class to have to go thru sites.  I guess that is required if you want guest access otherwise if you want to authenticate you can go
+    directly to https://imagineinstituteserivce.my.salesfoce.com/services/apexrest/v1/sub-directory/sub.json and use REST Authentication
+
+*********************************************/
+
 @RestResource(urlMapping='/v1/sub-directory/*')
 global class C501_REST_Sub_Directory {
     @HttpGet
