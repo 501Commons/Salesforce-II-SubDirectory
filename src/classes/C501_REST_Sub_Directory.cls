@@ -33,10 +33,13 @@ global class C501_REST_Sub_Directory {
             if(queryType=='sub.json'){
                 List<Contact> subList;
                 List<Contact> subListUpdate=new List<Contact>();
-                subList = [SELECT ID,FirstName,LastName,c501_cm__ii_Stars_Id__c,Languages_Spoken__c,MailingLatitude,MailingLongitude,
-                c501_cm__ii_County__c,c501_cm__C501_Imagine_WA_County__c,c501_cm__C501_Record_Type_Name__c,c501_cm__ii_Sub_Pool_Status__c,
-                MailingCity,c501_cm__ii_Primary_Language__c
-                FROM Contact WHERE Sub_Pool_Status_Rollup__c='Approved' AND c501_cm__C501_Record_Type_Name__c='Contact'];
+                subList = [
+                    SELECT ID,FirstName,LastName,c501_cm__ii_Stars_Id__c,Languages_Spoken__c,MailingLatitude,MailingLongitude,
+                        c501_cm__ii_County__c,c501_cm__C501_Imagine_WA_County__c,c501_cm__C501_Record_Type_Name__c,c501_cm__ii_Sub_Pool_Status__c,
+                        MailingCity,c501_cm__ii_Primary_Language__c
+                    FROM Contact
+                    WHERE Sub_Pool_Status_Rollup__c = 'Approved' AND c501_cm__C501_Record_Type_Name__c = 'Contact'];
+
                     /* for(Contact sl:sublist){
                         Contact newcon = new Contact();
                         newcon.FirstName=sl.FirstName;
@@ -115,10 +118,12 @@ global class C501_REST_Sub_Directory {
             }
             if(queryType=='fac.json'){
                 List<Contact> facList;
-                facList = [SELECT ID,FirstName,LastName,c501_cm__ii_Stars_Id__c,Languages_Spoken__c,
-                c501_cm__C501_Imagine_WA_County__c,c501_cm__C501_Record_Type_Name__c,c501_cm__ii_Sub_Pool_Status__c,c501_cm__ii_FamLink_Id__c,
-                c501_cm__ii_Facility_Name__c,c501_cm__ii_Substitute_Pool_Status__c,c501_cm__ii_Primary_Language__c,MailingCity,c501_cm__ii_County__c
-                FROM Contact WHERE c501_cm__ii_Substitute_Pool_Status__c='Approved' AND c501_cm__C501_Record_Type_Name__c='Facility'];
+                facList = [
+                    SELECT ID,FirstName,LastName,c501_cm__ii_Stars_Id__c,Languages_Spoken__c,
+                        c501_cm__C501_Imagine_WA_County__c,c501_cm__C501_Record_Type_Name__c,c501_cm__ii_Sub_Pool_Status__c,c501_cm__ii_FamLink_Id__c,
+                        c501_cm__ii_Facility_Name__c,c501_cm__ii_Substitute_Pool_Status__c,c501_cm__ii_Primary_Language__c,MailingCity,c501_cm__ii_County__c
+                    FROM Contact 
+                    WHERE Substitute_Pool_Status_Rollup__c = 'Approved' AND c501_cm__C501_Record_Type_Name__c = 'Facility'];
                 
                 JSONGenerator gen = JSON.createGenerator(true);
                 gen.writeStartArray();
