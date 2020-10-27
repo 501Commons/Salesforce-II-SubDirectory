@@ -35,7 +35,7 @@ global class C501_REST_Sub_Directory {
                 List<Contact> subListUpdate=new List<Contact>();
                 subList = [
                     SELECT ID,FirstName,LastName,c501_cm__ii_Stars_Id__c,Languages_Spoken__c,MailingLatitude,MailingLongitude,
-                        c501_cm__ii_County__c,c501_cm__C501_Imagine_WA_County__c,c501_cm__C501_Record_Type_Name__c,c501_cm__ii_Sub_Pool_Status__c,
+                        County__c,c501_cm__C501_Record_Type_Name__c,c501_cm__ii_Sub_Pool_Status__c,
                         MailingCity,c501_cm__ii_Primary_Language__c
                     FROM Contact
                     WHERE Sub_Pool_Status_Rollup__c = 'Approved' AND c501_cm__C501_Record_Type_Name__c = 'Contact'];
@@ -48,15 +48,15 @@ global class C501_REST_Sub_Directory {
                         newcon.Languages_Spoken__c=sl.Languages_Spoken__c;
                         newcon.MailingLatitude=sl.MailingLatitude;
                         newcon.MailingLongitude=sl.MailingLongitude;
-                        newcon.c501_cm__ii_County__c=sl.c501_cm__ii_County__c;
+                        newcon.County__c=sl.County__c;
                         newcon.c501_cm__ii_Sub_Pool_Status__c=sl.c501_cm__ii_Sub_Pool_Status__c;
                         newcon.MailingCity=sl.MailingCity;
                         if(String.isBlank(sl.c501_cm__ii_Stars_Id__c)){newcon.c501_cm__ii_Stars_Id__c='c501_cm__ii_Stars_Id__c';}
                         if(String.isBlank(sl.Languages_Spoken__c)){newcon.Languages_Spoken__c='Languages_Spoken__c';}
                         if(sl.MailingLatitude==null){newcon.MailingLatitude=0;}
                         if(sl.MailingLongitude==null){newcon.MailingLongitude=0;}
-                        if(String.isBlank(sl.c501_cm__ii_County__c)){newcon.c501_cm__ii_County__c=sl.c501_cm__C501_Imagine_WA_County__c;}
-                        if(String.isBlank(newcon.c501_cm__ii_County__c)){newcon.c501_cm__ii_County__c='c501_cm__ii_County__c';}
+                        if(String.isBlank(sl.County__c)){newcon.County__c=sl.County__c;}
+                        if(String.isBlank(newcon.County__c)){newcon.County__c='County__c';}
                         if(String.isBlank(sl.c501_cm__ii_Sub_Pool_Status__c)){newcon.c501_cm__ii_Sub_Pool_Status__c='c501_cm__ii_Sub_Pool_Status__c';}
                         if(String.isBlank(sl.MailingCity)){newcon.MailingCity='MailingCity';}
                         subListUpdate.add(newcon); */
@@ -79,11 +79,11 @@ global class C501_REST_Sub_Directory {
                     if(City2==null){
                         City2='City';
                     }
-                    String County = sl.c501_cm__ii_County__c;
+                    String County = sl.County__c;
                     if(County==null){
                         County='County';
                     }
-                    String County2 = sl.c501_cm__ii_County__c;
+                    String County2 = sl.County__c;
                     if(County2==null){
                         County2='County';
                     }
@@ -120,8 +120,8 @@ global class C501_REST_Sub_Directory {
                 List<Contact> facList;
                 facList = [
                     SELECT ID,FirstName,LastName,c501_cm__ii_Stars_Id__c,Languages_Spoken__c,
-                        c501_cm__C501_Imagine_WA_County__c,c501_cm__C501_Record_Type_Name__c,c501_cm__ii_Sub_Pool_Status__c,c501_cm__ii_FamLink_Id__c,
-                        c501_cm__ii_Facility_Name__c,c501_cm__ii_Substitute_Pool_Status__c,c501_cm__ii_Primary_Language__c,MailingCity,c501_cm__ii_County__c
+                        County__c,c501_cm__C501_Record_Type_Name__c,c501_cm__ii_Sub_Pool_Status__c,c501_cm__ii_FamLink_Id__c,
+                        c501_cm__ii_Facility_Name__c,c501_cm__ii_Substitute_Pool_Status__c,c501_cm__ii_Primary_Language__c,MailingCity
                     FROM Contact 
                     WHERE Substitute_Pool_Status_Rollup__c = 'Approved' AND c501_cm__C501_Record_Type_Name__c = 'Facility'];
                 
@@ -140,7 +140,7 @@ global class C501_REST_Sub_Directory {
                     if(City2==null){
                         City2='City';
                     }
-                    String County2 = f.c501_cm__ii_County__c;
+                    String County2 = f.County__c;
                     if(County2==null){
                         County2='County';
                     }
@@ -160,7 +160,7 @@ global class C501_REST_Sub_Directory {
                     if(MailCity==null){
                         MailCity='City1';
                     }
-                    String County = f.c501_cm__ii_County__c;
+                    String County = f.County__c;
                     if(County==null){
                         County='County1';
                     }

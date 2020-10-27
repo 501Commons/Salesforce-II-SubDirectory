@@ -112,7 +112,7 @@ public with sharing class C501_Test_Utility {
                 FirstName = 'FirstName' + string.valueOf(nLoop),
                 LastName = 'LastName' + string.valueOf(nLoop),
                 email = 'FirstName' + string.valueOf(nLoop) + '.LastName' + string.valueOf(nLoop) + '@test-citrix.com',
-                c501_cm__C501_Imagine_WA_County__c=C501_Imagine_WA_County,
+                County__c=C501_Imagine_WA_County,
                 MobilePhone=mphone,
                 c501_cm__Imagine_Mobile_Phone__c=Imagine_Mobile_Phone,
                 c501_cm__C501_SMS_Opt_Out__c=C501_SMS_Opt_Out,

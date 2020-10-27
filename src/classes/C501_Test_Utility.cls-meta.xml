@@ -2,6 +2,11 @@
 <ApexClass xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>46.0</apiVersion>
     <packageVersions>
+        <majorNumber>3</majorNumber>
+        <minorNumber>119</minorNumber>
+        <namespace>GW_Volunteers</namespace>
+    </packageVersions>
+    <packageVersions>
         <majorNumber>1</majorNumber>
         <minorNumber>3</minorNumber>
         <namespace>c501_cm</namespace>
